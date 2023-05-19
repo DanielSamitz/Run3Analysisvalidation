@@ -218,6 +218,12 @@ Int_t Compare(TString fileO2 = "AnalysisResults_O2.root", TString fileAli = "Ana
   AddHistogram(vecHisJpsi, "decay length error (cm)", "hDecLenErrJpsi", "hf-task-jpsi/hDecLenErr", 1, 1, 0);
   AddHistogram(vecHisJpsi, "decay length XY error (cm)", "hDecLenXYErrJpsi", "hf-task-jpsi/hDecLenXYErr", 1, 1, 0);
 
+  VecSpecHis vecHisLcK0sP;
+  AddHistogram(vecHisLcK0sP, "inv. mass (p K_{S}^{0}) (GeV/#it{c}^{2})", "hInvMassLcK0sp", "hf-task-lc-to-k0s-p/hMass", 10, 1, 0);
+  AddHistogram(vecHisLcK0sP, "candidate #it{p}_{T} (GeV/#it{c})", "hPtLcK0sp", "hf-task-lc-to-k0s-p/hPtCand", 10, 1, 0);
+  AddHistogram(vecHisLcK0sP, "inv. mass of V0 (GeV/#it{c}^{2})", "hInvMassK0s", "hf-task-lc-to-k0s-p/hV0MK0Short", 10, 1, 0);
+
+
   // vector of specifications of vectors: name, VecSpecHis, pads X, pads Y
   std::vector<std::tuple<TString, VecSpecHis, int, int>> vecSpecVecSpec;
 
@@ -254,6 +260,8 @@ Int_t Compare(TString fileO2 = "AnalysisResults_O2.root", TString fileAli = "Ana
     vecSpecVecSpec.push_back(std::make_tuple("lc-mc-nonprompt", vecHisLcMCNonPrompt, 5, 3));
   if (options.Contains(" jpsi "))
     vecSpecVecSpec.push_back(std::make_tuple("jpsi", vecHisJpsi, 5, 3));
+  if (options.Contains(" lc-k0s-p "))
+    vecSpecVecSpec.push_back(std::make_tuple("lc-k0s-p", vecHisLcK0sP, 2, 2));
 
   // Histogram plot vertical margins
   Float_t marginHigh = 0.05;

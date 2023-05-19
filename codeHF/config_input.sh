@@ -32,7 +32,7 @@ JSON="$JSONRUN3"
 # ISMC=0
 # JSON="$JSONRUN3"
 
-INPUT_BASE="/data2/data" # alicecerno2
+INPUT_BASE="/home/daniel/alice/MyStuff/Lc_tests/Run3AnalysisValidation/input" # alicecerno2
 
 case $INPUT_CASE in
   1)

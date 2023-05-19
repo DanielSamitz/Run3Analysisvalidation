@@ -165,7 +165,6 @@ workflows:
       - o2-analysis-hf-candidate-creator-cascade
       - o2-analysis-pid-tpc-full
       - o2-analysis-pid-tof-full_runX
-      - o2-analysis-pid-bayes
     tables: HFSELLCK0SP
 
   o2-analysis-hf-candidate-selector-x-to-jpsi-pi-pi:
